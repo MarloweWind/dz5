@@ -66,3 +66,4 @@ gazel.chageWindowsState(windowsState: .open)
 gazel.trunkState = .trunkIsFull
 print(mitsubisi.description)
 print(gazel.description)
+//на проверку
