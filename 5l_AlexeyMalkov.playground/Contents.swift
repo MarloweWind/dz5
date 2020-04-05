@@ -30,30 +30,24 @@ extension Car {
         self.windowsState = windowsState
     }
 }
-class sportCar: Car, CustomStringConvertible{
+class basicCar: Car{
     var brand: String
     var release: Int
     var engineState: engine = .off
     var windowsState: windows = .closed
-    var nitroState: nitro = .nitroOff
     init(brand: String, release: Int) {
         self.brand = brand
         self.release = release
     }
+}
+class sportCar: basicCar, CustomStringConvertible{
+    var nitroState: nitro = .nitroOff
     var description: String{
         return "engine is \(engineState), windows is \(windowsState), nitro is \(nitroState), release date is \(release)"
     }
 }
-class trunkCar: Car, CustomStringConvertible{
-    var brand: String
-    var release: Int
-    var engineState: engine = .off
-    var windowsState: windows = .closed
+class trunkCar: basicCar, CustomStringConvertible{
     var trunkState: luggage = .TrunkIsEmpty
-    init(brand: String, release: Int) {
-        self.brand = brand
-        self.release = release
-    }
     var description: String{
         return "engine is \(engineState), windows is \(windowsState), trunk is \(trunkState), release date is \(release)"
     }
